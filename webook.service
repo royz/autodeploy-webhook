@@ -1,0 +1,15 @@
+[Unit]
+Description= Github Webhook
+Documentation=https://github.com/adnanh/webhook
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=ubuntu
+Restart=on-failure
+RestartSec=5
+ExecStart=/usr/bin/webhook -verbose -hotreload -hooks <path to hooks.json> -port 9000 -http-methods post
+
+[Install]
+WantedBy=multi-user.target
