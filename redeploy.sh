@@ -12,6 +12,9 @@ git pull -f origin master
 # cd to the subdir if the code is nested
 cd server/
 
+# install dependencies
+yarn
+
 # start the server using pm2/node/npm/yarn/whatever
 pm2 start ecosystem.config.js
 
